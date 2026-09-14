@@ -1,400 +1,378 @@
-# 🎓 CampusConnec
+# 🏠A  House Price Predictor
 
-**CampusConnect** is a full-stack campus platform designed to bring essential student services into one unified digital ecosystem.
+An interactive **Machine Learning web application** that predicts house prices based on property characteristics such as **square footage, bedrooms, bathrooms, and property age**.
 
-Students can exchange skills, buy and sell campus items, report lost or found belongings, communicate with other students, build reputation, and use AI-powered review analysis — all from a single platform.
-
----
-
-## 🚀 Features
-
-### 🤝 Skill Exchange
-
-Students can share their knowledge and learn from other students.
-
-* Offer skills you can teach
-* Find students with skills you want to learn
-* Connect with other students
-* Track skill-exchange sessions
-* Build reputation through successful sessions
-
-Examples:
-
-`Programming • Languages • Design • Video Editing • Academic Subjects`
+The application combines a trained regression model with a modern **Streamlit dashboard** and interactive **Plotly visualizations** to provide property valuation insights.
 
 ---
 
-### 🛒 Campus Marketplace
+## 🎯 Project Overview
 
-A student-focused marketplace for buying and selling useful campus items.
+Estimating the value of a property depends on multiple factors.
 
-Students can list items such as:
+This project demonstrates how **Machine Learning Regression** can be used to analyze housing information and generate an estimated property value.
 
-* 📚 Textbooks
-* 🧮 Calculators
-* 💻 Electronics
-* 🪑 Dorm supplies
-* 🎒 College accessories
-
-Users can browse listings and communicate with sellers directly through the platform.
+Users enter property details through an interactive interface, and the trained ML model instantly generates a predicted price along with useful market analytics.
 
 ---
 
-### 🔍 Lost & Found Portal
+## ✨ Features
 
-CampusConnect provides a centralized system for reporting lost and found belongings.
+### 🤖 AI-Powered Price Prediction
 
-Students can:
+Predict the estimated value of a property using inputs such as:
 
-* Report lost items
-* Post found items
-* Browse available reports
-* Claim belongings
-* Verify ownership using verification questions
+* 📐 Square Footage
+* 🛏️ Number of Bedrooms
+* 🚿 Number of Bathrooms
+* 🏗️ Property Age
 
-Successful returns can also improve the student's reputation score.
-
----
-
-### 🤖 AI Review Analyzer
-
-CampusConnect integrates **Google Gemini AI** to analyze user reviews.
-
-The AI system can:
-
-* Detect suspicious or spam reviews
-* Analyze sentiment
-* Summarize positive and negative feedback
-* Generate trust insights
-
-If the Gemini API is unavailable, the application can fall back to local rule-based analysis.
+The prediction is generated using a pre-trained **Scikit-learn regression model**.
 
 ---
 
-### 💬 Student Communication
+### 📊 Dynamic Valuation Gauge
 
-CampusConnect allows students to communicate directly inside the platform.
+Displays the predicted property value through an interactive gauge chart.
 
-Features include:
-
-* Student-to-student messaging
-* Message history
-* Notifications
-* User interaction across marketplace and skill exchange features
+It helps visualize how the estimated value compares with the average market value.
 
 ---
 
-### ⭐ Student Reputation System
+### 📈 10-Year Valuation Trajectory
 
-Students build reputation through positive activity on the platform.
+Provides a visual representation of:
 
-Examples include:
+* Historical property value
+* Current estimated value
+* Projected future valuation
 
-* Completing teaching sessions
-* Successfully returning lost items
-* Marketplace activity
-* Community participation
-
-This helps create a more trustworthy campus community.
+This helps users understand potential property value trends.
 
 ---
 
-### 🛡️ Admin Dashboard
+### 🕸️ Property Radar Analysis
 
-Administrators can monitor and moderate activity across CampusConnect.
+An interactive radar chart compares the selected property specifications with typical market characteristics.
 
-Admin capabilities include:
+Comparison factors include:
 
-* User management
-* Content moderation
-* Marketplace monitoring
-* Lost & Found monitoring
-* Platform activity management
+* Square Footage
+* Bedrooms
+* Bathrooms
+* Property Age
 
 ---
 
-## 🔐 Authentication & Verification
+### 💰 Property Analytics
 
-CampusConnect includes authentication features designed for a university environment.
+The dashboard also calculates useful property metrics such as:
 
-* Student registration
-* Login authentication
-* JWT-based authentication
-* College email verification
-* Role-based access
-* Student and Admin accounts
+**Value per Square Foot**
+
+```text
+Predicted Property Value
+────────────────────────
+Total Square Footage
+```
+
+**Estimated Monthly Mortgage**
+
+Provides an approximate monthly payment based on the predicted property value.
+
+---
+
+## 🧠 Machine Learning Workflow
+
+```text
+Housing Dataset
+      │
+      ▼
+Data Loading
+      │
+      ▼
+Data Preprocessing
+      │
+      ▼
+Feature Selection
+      │
+      ▼
+Regression Model Training
+      │
+      ▼
+Model Evaluation
+      │
+      ▼
+Save Model using Joblib
+      │
+      ▼
+Streamlit Application
+      │
+      ▼
+User Property Details
+      │
+      ▼
+House Price Prediction
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
+### Programming Language
 
-* ⚛️ React.js
-* ⚡ Vite
-* 🎨 Tailwind CSS
-* 🧭 React Router
-* 🔗 Axios
-* 🎯 Lucide Icons
+* 🐍 Python
 
-### Backend
+### Machine Learning
 
-* 🟢 Node.js
-* 🚂 Express.js
-* 📁 Multer
-* 🔐 JWT Authentication
+* 🤖 Scikit-learn
+* 🐼 Pandas
+* 🔢 NumPy
+* 📦 Joblib
 
-### Database
+### Web Application
 
-* 🐬 MySQL
-* 🔷 Prisma ORM
+* 🎈 Streamlit
 
-### Artificial Intelligence
+### Data Visualization
 
-* ✨ Google Gemini API
-* `@google/genai`
+* 📊 Plotly
+* `plotly.graph_objects`
+
+### Styling
+
+* 🎨 Custom CSS
+* HTML elements
+* Glassmorphism-inspired UI
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-PROJECT-01-CAMPUS-CONNECT/
+PROJECT-03-AI-HOUSE-PRICE-PREDICTOR/
 │
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── ...
+├── app.py
 │
-├── backend/
-│   ├── prisma/
-│   ├── routes/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── package.json
-│   └── ...
+├── generate_and_train.py
+│
+├── housing_data.csv
+│
+├── model.joblib
+│
+├── requirements.txt
+│
+├── .gitignore
 │
 └── README.md
 ```
 
----
+### File Description
 
-# ⚙️ Getting Started
-
-## 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/JASH2026AD/PROJECT-01-CAMPUS-CONNECT.git
-```
-
-Move into the project:
-
-```bash
-cd PROJECT-01-CAMPUS-CONNECT
-```
+| File                    | Purpose                                  |
+| ----------------------- | ---------------------------------------- |
+| `app.py`                | Main Streamlit web application           |
+| `generate_and_train.py` | Generates/trains the ML regression model |
+| `housing_data.csv`      | Housing dataset used for model training  |
+| `model.joblib`          | Pre-trained Machine Learning model       |
+| `requirements.txt`      | Required Python libraries                |
+| `.gitignore`            | Files excluded from Git                  |
+| `README.md`             | Project documentation                    |
 
 ---
 
-## 2️⃣ Configure MySQL
+# 🚀 Getting Started
 
-Make sure **MySQL Server** is installed and running.
-
-Navigate to:
-
-```text
-backend/
-```
-
-Create a `.env` file.
-
-Example:
-
-```env
-DATABASE_URL="mysql://root:password@localhost:3306/campusconnect"
-
-JWT_SECRET="your_secure_jwt_secret"
-
-GEMINI_API_KEY="your_gemini_api_key"
-```
-
-> ⚠️ Never commit your real `.env` file, passwords, JWT secrets, or API keys to GitHub.
-
----
-
-## 3️⃣ Backend Setup
-
-Open a terminal:
+## 1. Clone the Repository
 
 ```bash
-cd backend
+git clone https://github.com/JASH2026AD/PROJECT-03-AI-HOUSE-PRICE-PREDICTOR.git
 ```
 
-Install dependencies:
+Move into the project directory:
 
 ```bash
-npm install
-```
-
-Run Prisma migration:
-
-```bash
-npx prisma migrate dev --name init
-```
-
-Generate Prisma Client:
-
-```bash
-npx prisma generate
-```
-
-Seed sample data:
-
-```bash
-npx prisma db seed
-```
-
-Start the backend:
-
-```bash
-npm run dev
-```
-
-Backend server:
-
-```text
-http://localhost:5000
+cd PROJECT-03-AI-HOUSE-PRICE-PREDICTOR
 ```
 
 ---
 
-## 4️⃣ Frontend Setup
+## 2. Create a Virtual Environment
 
-Open another terminal:
-
-```bash
-cd frontend
-```
-
-Install dependencies:
+### Windows
 
 ```bash
-npm install
+python -m venv venv
 ```
 
-Start the Vite development server:
+Activate it:
 
 ```bash
-npm run dev
+venv\Scripts\activate
 ```
 
-Frontend:
+### macOS / Linux
 
-```text
-http://localhost:5173
+```bash
+python3 -m venv venv
+```
+
+Activate it:
+
+```bash
+source venv/bin/activate
 ```
 
 ---
 
-# 🧪 Demo Accounts
+## 3. Install Dependencies
 
-After running the database seed, the following development accounts can be used.
-
-### 👨‍🎓 Student
-
-```text
-Email: alice@college.edu
-Password: password123
-```
-
-### 👨‍🎓 Student
-
-```text
-Email: bob@college.edu
-Password: password123
-```
-
-### 🛡️ Administrator
-
-```text
-Email: admin@college.edu
-Password: password123
-```
-
-> These accounts are intended only for local development and testing.
-
----
-
-# 🔄 Application Flow
-
-```text
-Student
-   │
-   ▼
-Register / Login
-   │
-   ▼
-College Email Verification
-   │
-   ▼
-CampusConnect Dashboard
-   │
-   ├──► Skill Exchange
-   │
-   ├──► Campus Marketplace
-   │
-   ├──► Lost & Found
-   │
-   ├──► AI Reviews
-   │
-   ├──► Messages
-   │
-   └──► Notifications
+```bash
+pip install -r requirements.txt
 ```
 
 ---
 
-# 🌟 Core Idea
+## 4. Run the Application
 
-College students often need different services throughout their campus life:
+Start the Streamlit development server:
 
-* Finding someone who can teach a skill
-* Selling unused textbooks
-* Buying second-hand college items
-* Finding lost belongings
-* Communicating with other students
-* Identifying trustworthy users
+```bash
+streamlit run app.py
+```
 
-Instead of using multiple disconnected platforms, **CampusConnect combines these services into one campus-focused ecosystem.**
+Then open:
+
+```text
+http://localhost:8501
+```
+
+in your browser.
+
+---
+
+# 🧠 Model Training
+
+The repository already contains a trained model:
+
+```text
+model.joblib
+```
+
+Therefore, you can run the application directly without retraining the model.
+
+If you want to retrain the model using the housing dataset, run:
+
+```bash
+python generate_and_train.py
+```
+
+The script trains the Machine Learning model and generates an updated:
+
+```text
+model.joblib
+```
+
+file.
+
+---
+
+# 🔄 Prediction Process
+
+When a user enters property information:
+
+```text
+User Input
+   │
+   ├── Square Footage
+   ├── Bedrooms
+   ├── Bathrooms
+   └── Property Age
+          │
+          ▼
+    Streamlit App
+          │
+          ▼
+   Pre-trained Model
+          │
+          ▼
+    Price Prediction
+          │
+          ▼
+   Analytics Dashboard
+          │
+   ┌──────┼───────────┐
+   ▼      ▼           ▼
+ Gauge  Trajectory   Radar
+ Chart    Chart       Chart
+```
+
+---
+
+# 💡 What This Project Demonstrates
+
+This project demonstrates practical knowledge of:
+
+* Machine Learning Regression
+* Data preprocessing
+* Feature-based prediction
+* Model training
+* Model serialization with Joblib
+* Python application development
+* Streamlit dashboards
+* Interactive data visualization
+* Machine Learning model deployment into a web interface
 
 ---
 
 # 🔮 Future Improvements
 
-Possible future enhancements include:
+Future versions could include:
 
-* 📱 Mobile application
-* 🔔 Real-time push notifications
-* 💬 WebSocket-based real-time chat
-* 🗺️ Campus map integration
-* 📍 Location-based Lost & Found
-* 🤖 AI-powered recommendations
-* 📊 Advanced admin analytics
-* 🎓 Multi-college support
-* 🔐 OTP/email verification service
+* 🏙️ Location-based house pricing
+* 🗺️ Google Maps integration
+* 📍 City and neighborhood selection
+* 📊 Larger real-world housing datasets
+* 🧠 Multiple ML model comparison
+* 🌲 Random Forest / XGBoost models
+* 📉 Model accuracy dashboard
+* 🔐 User authentication
+* 💾 Prediction history
 * ☁️ Cloud deployment
+* 📱 Improved mobile interface
+* 🏘️ Real-estate market API integration
+
+---
+
+# 📸 Screenshots
+
+Add screenshots of your application here.
+
+```text
+assets/
+├── dashboard.png
+├── prediction.png
+├── valuation-chart.png
+└── radar-analysis.png
+```
+
+Example:
+
+```markdown
+![AI House Price Predictor Dashboard](assets/dashboard.png)
+```
 
 ---
 
 # 🤝 Contributing
 
-Contributions, suggestions, and improvements are welcome.
+Contributions and suggestions are welcome.
 
 1. Fork the repository
-2. Create a new branch
+2. Create a feature branch
 
 ```bash
-git checkout -b feature/your-feature
+git checkout -b feature/new-feature
 ```
 
 3. Commit your changes
@@ -403,21 +381,21 @@ git checkout -b feature/your-feature
 git commit -m "Add new feature"
 ```
 
-4. Push the branch
+4. Push your branch
 
 ```bash
-git push origin feature/your-feature
+git push origin feature/new-feature
 ```
 
-5. Create a Pull Request
+5. Open a Pull Request
 
 ---
 
 # ⭐ Support
 
-If you find **CampusConnect** useful or interesting, consider giving the repository a ⭐.
+If you find this project useful, consider giving the repository a **⭐ Star**.
 
-It helps support the project and its future development.
+It helps support the project and future improvements.
 
 ---
 
@@ -431,16 +409,16 @@ GitHub: `@JASH2026AD`
 
 ## 📄 License
 
-This project is intended for educational and development purposes.
+This project is intended for **educational and Machine Learning development purposes**.
 
 ---
 
 <div align="center">
 
-### 🎓 CampusConnect
+# 🏠 AI House Price Predictor
 
-**Connect • Learn • Exchange • Discover**
+### Machine Learning • Data Analytics • Property Valuation
 
-Built for a smarter and more connected campus. 🚀
+**Turning property data into intelligent price predictions. 🚀**
 
 </div>
