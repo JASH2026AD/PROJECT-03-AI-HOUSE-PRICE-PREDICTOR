@@ -1,4 +1,4 @@
-# 🏠House Price Predictor
+# 🏠AI House Price Predictor
 
 An interactive **Machine Learning web application** that predicts house prices based on property characteristics such as **square footage, bedrooms, bathrooms, and property age**.
 
